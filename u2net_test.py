@@ -54,13 +54,14 @@ def save_output(image_name,pred,d_dir):
 def main():
 
     # --------- 1. get image path and name ---------
-    model_name='u2net'#u2netp
+    model_name='u2netp'#u2netp
+    cur_model_name = "u2netp_bce_itr_28000_train_0.252114_tar_0.023896"
 
 
-
-    image_dir = os.path.join(os.getcwd(), 'test_data', 'test_images')
-    prediction_dir = os.path.join(os.getcwd(), 'test_data', model_name + '_results' + os.sep)
-    model_dir = os.path.join(os.getcwd(), 'saved_models', model_name, model_name + '.pth')
+    test_set = "test_synth_imgs"
+    image_dir = os.path.join(os.getcwd(), 'test_data', test_set)
+    prediction_dir = os.path.join(os.getcwd(), 'test_data', model_name + '_results_2_' + test_set + os.sep)
+    model_dir = os.path.join(os.getcwd(), 'saved_models', model_name, cur_model_name + '.pth')
 
     img_name_list = glob.glob(image_dir + os.sep + '*')
     print(img_name_list)
